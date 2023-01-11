@@ -10,4 +10,5 @@
         android:name="com.example.plainolnotes4.MainFragment"
         android:label="main_fragment"
         tools:layout="@layout/main_fragment" />
+
 </navigation>
