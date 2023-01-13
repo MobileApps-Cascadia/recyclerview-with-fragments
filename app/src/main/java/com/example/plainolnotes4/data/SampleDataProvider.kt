@@ -4,7 +4,7 @@ import java.util.*
 
 class SampleDataProvider {
 
-    companion object{
+    companion object {
         private val sampleText1 = "A simple note"
         private val sampleText2 = "A note a\nline feed"
         private val sampleText3 = """

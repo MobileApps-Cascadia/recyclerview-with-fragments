@@ -15,8 +15,9 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.plainolnotes4.databinding.MainFragmentBinding
 import com.example.plainolnotes4.TAG
+
 class MainFragment : Fragment(),
-NotesListAdapter.ListItemListener{
+    NotesListAdapter.ListItemListener {
 
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: MainFragmentBinding
@@ -29,7 +30,7 @@ NotesListAdapter.ListItemListener{
 
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
-        binding = MainFragmentBinding.inflate(inflater,container, false)
+        binding = MainFragmentBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
         with(binding.recyclerView) {
             setHasFixedSize(true)

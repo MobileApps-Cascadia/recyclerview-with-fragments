@@ -1,7 +1,6 @@
 package com.example.plainolnotes4
 
-import android.os.Binder
-import androidx.lifecycle.ViewModelProvider
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,14 +14,13 @@ class EditorFragment : Fragment() {
 
 
     private lateinit var viewModel: EditorViewModel
-    private val args : EditorFragmentArgs by navArgs()
+    private val args: EditorFragmentArgs by navArgs()
     private lateinit var binding: EditorFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         (activity as AppCompatActivity).supportActionBar?.let {
             it.setHomeButtonEnabled(true)
             it.setDisplayHomeAsUpEnabled(true)
@@ -32,9 +30,7 @@ class EditorFragment : Fragment() {
 
         binding = EditorFragmentBinding.inflate(inflater, container, false)
         binding.editor.setText("You selected note number ${args.noteId}")
+
         return binding.root
     }
-
-
-
 }
