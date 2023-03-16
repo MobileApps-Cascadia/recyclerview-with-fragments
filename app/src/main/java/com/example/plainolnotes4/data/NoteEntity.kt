@@ -1,6 +1,6 @@
 package com.example.plainolnotes4.data
 
-import java.util.Date
+import java.util.*
 
 data class NoteEntity (
     var id: Int,

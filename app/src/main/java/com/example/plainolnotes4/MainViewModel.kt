@@ -6,7 +6,7 @@ import com.example.plainolnotes4.data.NoteEntity
 import com.example.plainolnotes4.data.SampleDataProvider
 
 class MainViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+
     val notesList = MutableLiveData<List<NoteEntity>>()
 
     init {

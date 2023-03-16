@@ -1,5 +1,6 @@
 package com.example.plainolnotes4
 
+
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,10 +12,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.plainolnotes4.data.NoteEntity
+import com.example.plainolnotes4.data.TAG
 import com.example.plainolnotes4.databinding.MainFragmentBinding
 
-class MainFragment : Fragment() {
-
+class MainFragment : Fragment(), NoteListAdapter.ListItemListener {
+   private lateinit var adapter: NoteListAdapter
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: MainFragmentBinding
 
@@ -35,9 +37,15 @@ class MainFragment : Fragment() {
 
         viewModel.notesList.observe(viewLifecycleOwner, Observer{
             Log.i("noteLogging", it.toString())
-
+            adapter = NoteListAdapter(it, this@MainFragment)
+            binding.recyclerView.adapter= adapter
+            binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         })
         return binding.root
+    }
+
+    override fun onItemClick(noteId: Int){
+        Log.i(TAG, "onItemClick: receive note id $noteId")
     }
 
 }
